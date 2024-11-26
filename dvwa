@@ -1,0 +1,27 @@
+sudo apt update
+sudo apt install apache2 php php-mysqli mariadb-server
+cd /var/www/html
+sudo git clone https://github.com/ethicalhack3r/DVWA.git
+cd /var/www/html/DVWA
+sudo chmod -R 777 config
+sudo service mysql start
+sudo mysql -u root -p
+CREATE DATABASE dvwa;
+CREATE USER 'dvwauser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON dvwa.* TO 'dvwauser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+cd /var/www/html/DVWA/config
+sudo cp config.inc.php.dist config.inc.php
+sudo nano config.inc.php
+$_DVWA[ 'db_user' ] = 'dvwauser';
+$_DVWA[ 'db_password' ] = 'password';
+$_DVWA[ 'db_database' ] = 'dvwa';
+Save and exit (CTRL + X, then Y, then ENTER).
+sudo service apache2 start
+sudo systemctl enable apache2
+http://localhost/DVWA
+' OR '1'='1
+admin' --
+<script>alert('XSS Attack Successful!');</script>
+MaliciousUser: <script>alert('XSS Attack Successful!');</script>
