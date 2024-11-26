@@ -1,3 +1,12 @@
+
+create database krish;
+use krish;
+CREATE TABLE employee(
+emp_id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL
+);
+
+drop table employee
 Create a Backup Before Dropping: Use mysqldump to create a backup:
 
 bash
