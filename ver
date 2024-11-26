@@ -1,0 +1,16 @@
+1.	Download veraCrypt
+2.	create 
+3.	select volume type
+location 
+5.	select encryption option 
+6.	select volume size
+7.	set password
+8.	format volume key 
+9.	volume is created
+10.	select the volume file location 
+11.	select mount and enter password
+12.	create a file in the create volume 
+13.	it is visible that j is created
+14.	Now dismount the volume 
+15.	J is not available
+
