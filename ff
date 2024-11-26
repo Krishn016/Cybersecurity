@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+void buffer_overflow_demo() {
+    char buffer[10];
+    strcpy(buffer, "This is a long string that overflows the buffer");
+    printf("Buffer content: %s\n", buffer);
+}
+
+int main() {
+    buffer_overflow_demo();
+    return 0;
+}
+
+
+File & Line: The vulnerability is in vulnerable.c on line 6.
+Type: buffer overflow.
+Function: strcpy is unsafe because it doesn’t check buffer size.
+Recommendation: Use safer functions like strncpy or strlcpy.
+
+
+#include <stdio.h>
+#include <string.h>
+
+void buffer_overflow_demo() {
+    char buffer[10];
+    strncpy(buffer, "This is a long string that overflows the buffer", sizeof(buffer) - 1);
+    buffer[sizeof(buffer) - 1] = '\0';  // Ensure null termination
+    printf("Buffer content: %s\n", buffer);
+}
+
+int main() {
+    buffer_overflow_demo();
+    return 0;
+}
