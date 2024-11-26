@@ -1,0 +1,8 @@
+nikto -h https://example.com
+nikto -h example.com -o scan_results.txt
+nikto -h example.com -o scan_results.html -Format html
+nikto -h example.com -timeout 10
+nikto -h hosts.txt
+
+s
+
